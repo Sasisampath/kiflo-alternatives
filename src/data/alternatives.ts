@@ -1,4 +1,6 @@
 import { eulerGuide } from "@/data/euler-alternatives";
+import { kifloGuide } from "@/data/kiflo-alternatives";
+import { kifloPublication } from "@/data/navigation";
 
 export type AlternativeArticle = {
   slug: string; title: string; description: string; image: string;
@@ -15,4 +17,8 @@ export const partnerstackGuide: AlternativeArticle = {
   // Recount when editorial copy changes; no author or publication history supplied.
   wordCount: 3409,
 };
-export const alternativeArticles = [partnerstackGuide, eulerGuide];
+export const alternativeArticles = [
+  partnerstackGuide,
+  eulerGuide,
+  ...(kifloPublication.listed ? [kifloGuide] : []),
+];
